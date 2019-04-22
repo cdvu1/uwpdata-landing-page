@@ -53,6 +53,7 @@
 .nav-item {
   padding: 0px 18px 0px 18px;
   color: #B6B4AE;
+  text-decoration: none;
 }
 
 .nav-item:hover {
@@ -65,7 +66,7 @@
   
 }
 
-.home {
+.home, .api, .data {
   
   display: flex;
   flex-direction: column;
@@ -92,7 +93,7 @@
   padding-top: 30px;
 }
 
-.team-header, .uwpd-header {
+.team-header, .uwpd-header, .api-header {
   font-weight: 100;
   color: #9B9A97;
   font-size: 18px;
@@ -100,7 +101,7 @@
 }
 
 
-.team-cards{
+.team-cards, .api-cards{
   padding-top: 10px;
   font-size: 12px;
   display: flex;
@@ -118,7 +119,7 @@
   border-radius: 3px;
 }
 
-.team-item-name {
+.team-item-name, .card-title {
   font-weight: 600;
   text-transform: uppercase;
 }

@@ -1,86 +1,86 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
+import { HashRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
 
+import constants from './components/constants';
+import Home from './components/Home';
+import API from './components/API';
+import Data from './components/Data';
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      curr: "home"
+    }
+  }
 
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <div className="nav">
-            <div className="nav-item nav-item-selected">
-              Home
-            </div>
+      <Router>
+        <div className="App">
+          <header className="App-header">
+            <div className="nav">
+              <Link className="nav-home nav-item nav-item-selected" 
+                to={constants.routes.home} 
+                onClick={() => {
+                  console.log("clicked");
+                  let selected = document.querySelector('.nav-item-selected');
+                  console.log(selected);
+                  selected.classList.remove('nav-item-selected');
+                  
+                  let curr = document.querySelector('.nav-home');
+                  curr.classList.add('nav-item-selected');
+                }}
+              >
+                Home
+              </Link>
 
-            <div className="nav-item" onClick={() => {
-              
-            }}>
-              Meet the API
-            </div>
+              <Link className="nav-api nav-item" to={constants.routes.api} onClick={() => {
+                console.log("clicked");
+                let selected = document.querySelector('.nav-item-selected');
+                console.log(selected);
+                selected.classList.remove('nav-item-selected');
+                
+                let curr = document.querySelector('.nav-api');
+                curr.classList.add('nav-item-selected');
+              }}>
+                Meet the API
+              </Link>
 
-            <div className="nav-item">
-              Visualization
+              <Link className="nav-data nav-item" to={constants.routes.data} onClick={() => {
+                console.log("clicked");
+                let selected = document.querySelector('.nav-item-selected');
+                console.log(selected);
+                selected.classList.remove('nav-item-selected');
+                
+                let curr = document.querySelector('.nav-data');
+                curr.classList.add('nav-item-selected');
+              }}>
+                Visualization
+              </Link>
             </div>
-          </div>
-          <div className="header">
-            <span className="header-1">UWP</span>
-            <span className="header-2">Data</span>
-          </div>
-          <div className="header-description">
-            An easy to use, informative, access controlled API for enabling 
-            visualizations and other research from UWPD data.
-          </div>
-        </header>
+            <div className="header">
+              <span className="header-1">UWP</span>
+              <span className="header-2">Data</span>
+            </div>
+            <div className="header-description">
+              An easy to use, informative, access controlled API for enabling 
+              visualizations and other research from UWPD data.
+            </div>
+          </header>
 
-        <div className="home">
-          <div className="uwpd-header">UWPD's Mission</div>
-          <div className="uwpd">
-            <div className="uwpd-logo">
-              <img src={require("./pics/New_patch.png")} />
-            </div>
 
-            <div className="uwpd-mission">“Although no campus is free from crime, we are committed to partnering 
-              together with you to create a safe place to live, work, and study.”</div>
-          </div>
+          <Switch>
+            <Route exact path={constants.routes.home} component={Home} />
+            <Route path={constants.routes.api} component={API} />
+            <Route path={constants.routes.data} component={Data} />
+          </Switch>
 
-          <div className="team">
-            <div className="team-header">MEET THE TEAM</div>
-            <div className="team-cards">
-            <div>
-              <img src={require("./pics/ben.jpeg")} />
-              <div className="team-item-name">Ben Walchenbach</div>
-              <div>University of Washington</div>
-              <div>Incoming Security Engineer</div>
-            </div>
-
-            <div>
-              <img src={require("./pics/godwin.jpeg")} />
-              <div className="team-item-name">Godwin Vincent</div>
-              <div>University of Washington</div>
-              <div>Incoming Security Analyst</div>
-            </div>
-
-            <div>
-              <img src={require("./pics/maggie.jpeg")} />
-              <div className="team-item-name">Maggie Tsang</div>
-              <div>University of Washington</div>
-              <div>Incoming Project Manager</div>
-            </div>
-
-            <div>
-              <img src={require("./pics/cece.jpg")} />
-              <div className="team-item-name">Cecilia Vu</div>
-              <div>University of Washington</div>
-              <div>Incoming Software Engineer</div>
-            </div>
-            </div>
-          </div>
         </div>
-
-      </div>
+      </Router>
     );
   }
 }
