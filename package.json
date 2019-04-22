@@ -2,17 +2,18 @@
   "name": "landing-page",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://uwpdata.me",
+  "homepage": "https://cdvu1.github.io/uwpdata-landing-page",
   "dependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-scripts": "2.1.8",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^3.0.0",
     "reactstrap": "^7.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build -m ‘committing first build of chat app’",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -25,5 +26,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
+  }
 }
