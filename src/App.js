@@ -8,6 +8,8 @@ import Home from './components/Home';
 import API from './components/API';
 import Data from './components/Data';
 
+//import CarImage from './pics/car.pg';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -64,7 +66,8 @@ class App extends Component {
             </div>
             <div className="header">
               <span className="header-1">UWP</span>
-              <span className="header-2">Data</span>
+              <span className="header-2">DATA</span>
+              <img src={require("./pics/car-04.png")} alt="uwpd car" />
             </div>
             <div className="header-description">
               An easy to use, informative, access controlled API for enabling 

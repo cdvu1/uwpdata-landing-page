@@ -6,7 +6,7 @@ export default class Data extends Component {
     render() {
         return (
             <div className="data">
-                Tableau vis here
+                Tableau visual here
             </div>
         );
     }

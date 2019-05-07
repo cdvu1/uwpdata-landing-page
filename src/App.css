@@ -2,6 +2,8 @@
 
 .App {
   text-align: center;
+  font: 'Roboto';
+  font-size: 12px;
 }
 
 .App-logo {
@@ -10,23 +12,27 @@
   pointer-events: none;
 }
 
-.App-header {
+.App-header, .documentation {
   background-color: #ede9dc;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
 }
 
 .header {
-  font-weight: 100;
+  font-weight: 500;
   font-size: 80px;
 }
 
+.header img {
+  padding-left: 20px;
+  width: 140px;
+}
+
 .header-1 {
-  color: #4b2e83;
+  color: #605396;
 }
 
 .header-2 {
@@ -66,7 +72,7 @@
   
 }
 
-.home, .api, .data {
+.home, .api-intro, .data {
   
   display: flex;
   flex-direction: column;
@@ -109,6 +115,10 @@
   justify-content: space-evenly;
 }
 
+.api-card{
+  padding: 10px;
+}
+
 .team-cards div {
   padding: 0px 5px 0px 5px;
 }
@@ -122,6 +132,36 @@
 .team-item-name, .card-title {
   font-weight: 600;
   text-transform: uppercase;
+}
+
+.indent1 {
+  padding-left: 5%;
+}
+
+.indent2 {
+  padding-left: 10%;
+}
+
+.api-call-section {
+  text-align: left;
+}
+
+.api-call-div {
+  padding-top: 15px;
+}
+
+pre {
+  padding: 10px;
+  padding-right: 80px;
+}
+
+.api-call {
+  padding: 2px 6px 5px 5px;
+}
+
+pre, .api-call{
+  background-color: #F6F4ED;
+  border: 1px solid #9B9A97;
 }
 
 @keyframes App-logo-spin {
